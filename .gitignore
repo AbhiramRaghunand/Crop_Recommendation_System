@@ -1,3 +1,21 @@
-backend/.env
 
+
+# === ignore heavy model & data artifacts ===
+*.pkl
+*.csv
+/data/
+/backend/models/pkl/
+
+# notebooks checkpoints
+*.ipynb_checkpoints/
+
+# python cache / env
+__pycache__/
+*.pyc
 venv/
+.env
+.DS_Store
+
+# OS and IDE
+.idea/
+.vscode/
