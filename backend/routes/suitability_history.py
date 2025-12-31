@@ -21,6 +21,7 @@ async def get_history(db: Session = Depends(get_db),
         db.query(SuitabilityHistory)
         .filter(SuitabilityHistory.farmer_id == farmer.id)   # FIXED
         .order_by(SuitabilityHistory.created_at.desc())
+        .limit(3)
         .all()
     )
 

@@ -117,6 +117,9 @@ export async function handleLogin() {
     .eq("user_id", user.id)
     .single();
 
+  if (farmer?.language) {
+  localStorage.setItem("language", farmer.language);
+}
   document.getElementById("userName").textContent = farmer?.name || "Farmer";
 
   showPage("dashboardPage");

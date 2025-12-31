@@ -7,7 +7,7 @@ from sqlalchemy.pool import NullPool
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
-print("DATABASE_URL:", DATABASE_URL)
+# print("DATABASE_URL:", DATABASE_URL)
 
 # Supabase uses a serverless Postgres → use NullPool to avoid stale connections
 engine = create_engine(

@@ -157,12 +157,12 @@
         <div class="form-group">
           <select id="signupSoilType" required>
             <option value="">Select Soil Type</option>
-            <option value="Clay">Clay</option>
-            <option value="Sandy">Sandy</option>
+            <option value="Black">Black</option>
+            <option value="Clay">Clayey</option>
             <option value="Loamy">Loamy</option>
+            <option value="Red">Red</option>
+            <option value="Sandy">Sandy</option>
             <option value="Silt">Silt</option>
-            <option value="Peaty">Peaty</option>
-            <option value="Chalky">Chalky</option>
           </select>
         </div>
         <div class="form-group">
@@ -230,16 +230,21 @@
         <div class="form-group">
           <select id="recCropType">
             <option value="">Select Crop Type</option>
-            <option value="Wheat">Wheat</option>
-            <option value="Rice">Rice</option>
-            <option value="Maize">Maize</option>
-            <option value="Cotton">Cotton</option>
-            <option value="Sugarcane">Sugarcane</option>
-            <option value="Potato">Potato</option>
-            <option value="Tomato">Tomato</option>
-            <option value="Onion">Onion</option>
+            <option value="Bajra">Bajra</option>
             <option value="Barley">Barley</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Groundnut">Groundnut</option>
+            <option value="Maize">Maize</option>
+            <option value="Milliets">Milliets</option>
+            <!-- <option value="Oilseeds">Oilseeds</option> -->
+            <option value="Pigeonpea">Pigeonpea</option>
+            <option value="Pulses">Pulses</option>
+            <option value="Rice">Rice</option>
+            <option value="Sorghum">Sorghum</option>
             <option value="Soybean">Soybean</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <!-- <option value="Tabacco">Tabacco</option> -->
+            <option value="Wheat">Wheat</option>
           </select>
         </div>
         <div class="form-group">
@@ -268,16 +273,21 @@
         <div class="form-group">
           <select id="suitCropType">
             <option value="">Select Crop Type</option>
-            <option value="Wheat">Wheat</option>
-            <option value="Rice">Rice</option>
-            <option value="Maize">Maize</option>
-            <option value="Cotton">Cotton</option>
-            <option value="Sugarcane">Sugarcane</option>
-            <option value="Potato">Potato</option>
-            <option value="Tomato">Tomato</option>
-            <option value="Onion">Onion</option>
+            <option value="Bajra">Bajra</option>
             <option value="Barley">Barley</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Groundnut">Groundnut</option>
+            <option value="Maize">Maize</option>
+            <option value="Milliets">Milliets</option>
+            <!-- <option value="Oilseeds">Oilseeds</option> -->
+            <option value="Pigeonpea">Pigeonpea</option>
+            <option value="Pulses">Pulses</option>
+            <option value="Rice">Rice</option>
+            <option value="Sorghum">Sorghum</option>
             <option value="Soybean">Soybean</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <!-- <option value="Tobacco">Tobacco</option> -->
+            <option value="Wheat">Wheat</option>
           </select>
         </div>
         <button class="btn btn-primary" style="width: 100%;" id="suitabilityBtn">Check Suitability</button>
@@ -330,7 +340,6 @@
     document.getElementById("logoutBtn")?.addEventListener("click", handleLogout);
   }); -->
 
-  
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.js"></script>
 <script type="module" src="config.js"></script>

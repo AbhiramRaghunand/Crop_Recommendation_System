@@ -66,8 +66,9 @@ def register_field(lat: float, lon: float, area_acres: float, name="Farm_Field")
             "geometry": {"type": "Polygon", "coordinates": [polygon]}
         }
     }
-    print("DEBUG JSON SENT TO AGRO:",json.dumps(payload,indent=2))
-    res = requests.post(f"{BASE_URL}/polygons?appid={API_KEY}", json=payload)
+    # print("DEBUG JSON SENT TO AGRO:",json.dumps(payload,indent=2))
+    url = f"{BASE_URL}/polygons?appid={API_KEY}&duplicated=true"
+    res = requests.post(url, json=payload)
     if res.status_code != 200 and res.status_code != 201:
         print("AGRO ERROR RESPONSE:", res.text)
     res.raise_for_status()
@@ -114,14 +115,16 @@ def get_farm_data(lat: float, lon: float, area_acres: float, name="My_Farm",exis
     """
     Creates polygon, registers it, and retrieves NDVI + soil moisture.
     """
-    print("farmer.polygon_id BEFORE:", repr(existing_polygon_id))
+    # print("farmer.polygon_id BEFORE:", repr(existing_polygon_id))
 
     if existing_polygon_id:
         polygon_id = existing_polygon_id
     else:
         polygon_id = register_field(lat, lon, area_acres, name)
+    if not polygon_id:
+        raise Exception("Could not create or retrieve polygon from Agro API.")
+    
     ndvi_data = get_ndvi(polygon_id)
-
     latest_ndvi = ndvi_data[-1]["ndvi"] if ndvi_data else None
     soil_data = get_soil(polygon_id)
 

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from routes.recommend import start_scheduler
 import os
 load_dotenv()
-print("DEBUG ENV KEY:", os.getenv("FAST2SMS_API_KEY"))
+# print("DEBUG ENV KEY:", os.getenv("FAST2SMS_API_KEY"))
 
 
 @asynccontextmanager

@@ -380,35 +380,35 @@ def recommendations(data: cropInput, db: Session = Depends(get_db), authorizatio
 
         # Call the internal generator (it will update DB rows for model inputs/outputs/recommendations)
         result = generate_recommendation_internal(db, farmer, field, data)
-        print("DEBUG: Recommendation generated successfully.")
+        # print("DEBUG: Recommendation generated successfully.")
     except Exception as e:
         print("🔥 BACKEND ERROR:", str(e))
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
         # send SMS immediately (if configured)
-    try:
-        print("DEBUG: Checking if SMS send is needed.")
-        # print("DEBUG farmer object repr:", repr(farmer))
-        # print("DEBUG farmer.phone raw:", getattr(farmer, "phone", None))
-        # print("DEBUG type:", type(getattr(farmer, "phone", None)))
+    # try:
+    #     # print("DEBUG: Checking if SMS send is needed.")
+    #     # print("DEBUG farmer object repr:", repr(farmer))
+    #     # print("DEBUG farmer.phone raw:", getattr(farmer, "phone", None))
+    #     # print("DEBUG type:", type(getattr(farmer, "phone", None)))
 
-        if getattr(farmer, "phone", None):
-            print("DEBUG FARMER PHONE =", farmer.phone)
-            # print("DEBUG RESULT =", result)
-            print("DEBUG ENTERING SMS BLOCK NOW")
+    #     if getattr(farmer, "phone", None):
+    #         print("DEBUG FARMER PHONE =", farmer.phone)
+    #         # print("DEBUG RESULT =", result)
+    #         print("DEBUG ENTERING SMS BLOCK NOW")
 
-            sms_text = result["recommendation_text"]
-            send_sms_fast2sms(farmer.phone, sms_text)
-            print("Sending sms to", farmer.phone)
-            # update last_stage & last_weather to avoid immediate duplicate from scheduler
-            field.last_stage = result.get("stage")
-            field.last_weather = json.dumps(result.get("weather", {}))
-            db.add(field)
-    except Exception as e:
-        print("SMS send failed:", e)
+    #         sms_text = result["recommendation_text"]
+    #         send_sms_fast2sms(farmer.phone, sms_text)
+    #         print("Sending sms to", farmer.phone)
+    #         # update last_stage & last_weather to avoid immediate duplicate from scheduler
+    #         field.last_stage = result.get("stage")
+    #         field.last_weather = json.dumps(result.get("weather", {}))
+    #         db.add(field)
+    # except Exception as e:
+    #     print("SMS send failed:", e)
 
         # final commit and return
-    print("DEBUG: Committing DB changes now.")
+    # print("DEBUG: Committing DB changes now.")
     db.commit()
     return {"recommendations": result["recommendation_text"]}
 
