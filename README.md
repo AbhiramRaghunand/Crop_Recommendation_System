@@ -153,16 +153,16 @@ Smart farming initiatives
 Precision agriculture research
 
 📌How to Run the Project
-# Clone the repository
+- Clone the repository
 git clone https://github.com/yourusername/intelligent-agriculture-platform.git
 
-# Navigate to project folder
+- Navigate to project folder
 cd intelligent-agriculture-platform
 
-# Install dependencies
+- Install dependencies
 pip install -r requirements.txt
 
-# Run Flask app
+- Run Flask app
 python app.py
 
 📜 License
