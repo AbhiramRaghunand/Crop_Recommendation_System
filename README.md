@@ -1,6 +1,6 @@
-# Intelligent Agriculture Platform
+# Smart Crop Recommendation & Yield Prediction System
 
-## A Machine Learning–Driven Fertilizer Recommendation System
+## A Machine Learning–Driven Crop Yield Recommendation System
 
 📌 Overview
 
