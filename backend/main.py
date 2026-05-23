@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+
+from database.database import Base, engine
 from routes import recommend, recommendation_history, crop_suitability, suitability_history
 from dotenv import load_dotenv
 # from routes.recommend import start_scheduler

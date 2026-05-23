@@ -6,7 +6,7 @@ IDEAL_WATER_MM_DAY = {
     "cotton":    {"water_mm_day": 5.0, "notes": "Moderate-high water crop; 500-700 mm total over 120 days"},
     "groundnut": {"water_mm_day": 3.5, "notes": "Moderate; 350-400 mm total over 110-120 days"},
     "maize":     {"water_mm_day": 5.0, "notes": "Moderate-high; 450-550 mm total over 90-110 days"},
-    "millets":   {"water_mm_day": 4.5, "notes": "Similar to bajra; 350-450 mm total"},
+    "milliets":   {"water_mm_day": 4.5, "notes": "Similar to bajra; 350-450 mm total"},
     "oilseeds":  {"water_mm_day": 4.0, "notes": "Varies by crop; 400 mm average"},
     "pigeonpea": {"water_mm_day": 4.5, "notes": "Long duration crop (~150 days); 600-700 mm total"},
     "pulses":    {"water_mm_day": 3.5, "notes": "Low water crop; 300-400 mm total"},
